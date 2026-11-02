@@ -168,3 +168,4 @@ kr3-responsive-shop/
 ├── README.md
 └── .gitignore
 ```
+<!-- minor update for PR -->
