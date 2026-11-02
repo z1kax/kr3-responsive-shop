@@ -239,3 +239,53 @@ main {
     order: initial;
   }
 }
+
+/* ===================================
+   Практика 13: A11y (Доступность)
+   =================================== */
+
+/* Ссылка пропуска к основному содержимому */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 8px 12px;
+  color: #ffffff;
+  background-color: #7D29F2; /* Твой фиолетовый */
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+}
+
+/* Видимый фокус для всех интерактивных элементов (по методичке) */
+:focus-visible {
+  outline: 3px solid var(--color-primary, #7D29F2);
+  outline-offset: 3px;
+}
+
+.site-nav__link:focus-visible, 
+.button:focus-visible, 
+.order-form__input:focus-visible, 
+.order-form__textarea:focus-visible, 
+.order-form__select:focus-visible {
+  outline: 3px solid var(--color-primary, #7D29F2);
+  outline-offset: 3px;
+}
+
+/* Фикс контрастности бейджей для Lighthouse */
+.product-card__badge--hit {
+  color: #000000; /* Черный текст на оранжевом фоне */
+}
+.product-card__badge--new {
+  background-color: #117524; /* Чуть более темный зеленый */
+}
+
+/* Фикс контрастности хлебных крошек */
+.breadcrumbs__link {
+  text-decoration: underline;
+}
