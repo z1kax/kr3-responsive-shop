@@ -240,6 +240,20 @@ main {
   }
 }
 
+/* Фильтры в две колонки на планшетах (от 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .filters-form {
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    align-items: start; /* Выравниваем элементы по верху */
+    gap: 20px; /* Чуть увеличим отступ между колонками */
+  }
+
+  /* Кнопка "Применить" должна занимать обе колонки */
+  .filters-form button[type="submit"] {
+    grid-column: 1 / -1;
+  }
+}
+
 /* ===================================
    Практика 13: A11y (Доступность)
    =================================== */
@@ -288,4 +302,40 @@ main {
 /* Фикс контрастности хлебных крошек */
 .breadcrumbs__link {
   text-decoration: underline;
+}
+
+/* Фикс кнопок в карточках */
+.product-card__button {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Адаптивные шрифты и кнопки через clamp */
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); 
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+.button {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
+}
+
+/* Центрируем навигацию на мобильных (до 768px) */
+@media (max-width: 767.98px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .site-nav__list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .site-nav__link {
+    text-align: center;
+  }
 }
